@@ -1,57 +1,133 @@
-Azure Databricks & Spark Core for Data Engineering
-This repository contains resources for a comprehensive course on building data engineering solutions using Azure Databricks and Spark Core. The course is designed to help you build a real-world data project based on Formula1 motor racing data using modern cloud technologies like Azure Data Lake Storage Gen2, Azure Data Factory, Power BI, and Delta Lake.
+# 🏎️ Azure Databricks & Spark Core: End-to-End Data Engineering with Formula 1 Racing Data
 
-Project Overview:
-The course covers a real-world project using Formula1 motor racing data, allowing you to build and implement a data engineering solution in Azure Databricks. You will work with Azure Data Lake Storage, Spark Core, Delta Lake, and other Azure tools for ingestion, transformation, and reporting.
+This repository contains an **enterprise-grade data engineering project** built using **Azure Databricks, PySpark, Delta Lake, Azure Data Factory, and Power BI** — leveraging real-world Formula 1 racing data. The project showcases the design and implementation of a **Lakehouse Architecture** and demonstrates **modern ELT practices** in the Azure cloud ecosystem.
 
+> 🔧 This project is ideal for showcasing skills in **cloud-native big data processing, Delta Lake operations, PySpark transformations, workflow orchestration**, and **real-time reporting** using Power BI.
 
-Key Technologies Covered:
-Azure Databricks:
+---
 
-Creating and managing Databricks service, clusters, and notebooks
-Working with Databricks File System (DBFS), Delta Lake, and Lakehouse architecture
-Using PySpark and Spark SQL for data transformation and analysis
-Monitoring and managing Databricks clusters, jobs, and workflows
-Mounting Azure Storage in Databricks using Azure Key Vault
-Spark Core:
+## 🚀 Project Objective
 
-Ingestion and transformation of data using PySpark and Spark SQL
-Dataframe API, SQL transformations (e.g., Filter, Join, Aggregation, Window functions)
-Implementing incremental and full refresh patterns with partitions
-Delta Lake:
+To build a **modular, scalable, and cloud-native data engineering pipeline** using Azure tools and open-source frameworks, solving a real-world problem: managing and analyzing Formula 1 racing data.
 
-Working with Delta Lake: Read, Write, Update, Delete, and Merge operations
-Implementing Time Travel and History for data consistency
-Converting Parquet to Delta format and working with incremental data loads
-Azure Data Factory:
+Key Objectives:
+- Implement Delta Lake for data consistency and efficient incremental processing.
+- Build robust PySpark transformation logic using Spark Core APIs.
+- Automate workflows using Azure Data Factory pipelines.
+- Visualize curated data via Power BI dashboards connected directly to Databricks.
 
-Creating and scheduling pipelines for orchestrating Databricks jobs
-Designing robust pipelines to handle errors and unexpected scenarios (e.g., missing files)
-Monitoring and managing pipeline triggers and outputs
-Power BI:
+---
 
-Connecting Azure Databricks tables to Power BI for report generation and dashboard visualization
-Unity Catalog (Data Governance):
+## 🧰 Tech Stack & Services Used
 
-Overview and configuration of Unity Catalog for data governance
-Setting up a Metastore and managing access control, data lineage, and auditing
-Learning Outcomes:
-By the end of the course, you will be proficient in the following:
+| Tool/Service              | Purpose |
+|--------------------------|---------|
+| **Azure Databricks**     | Unified data analytics platform to develop PySpark notebooks, manage clusters, and run jobs. |
+| **Apache Spark (PySpark)**| Distributed data processing framework for large-scale transformation. |
+| **Delta Lake**           | ACID-compliant storage layer enabling updates, merges, time travel, and schema enforcement. |
+| **Azure Data Lake Gen2** | Storage for raw and transformed datasets. |
+| **Azure Key Vault**      | Secure access to secrets (e.g., credentials, mount configs). |
+| **Azure Data Factory**   | Pipeline orchestration, job scheduling, and monitoring. |
+| **Power BI**             | Business Intelligence dashboards for racing analytics. |
+| **Unity Catalog**        | Centralized governance, access control, and lineage for Databricks data. |
 
-Building end-to-end data engineering solutions using Azure Databricks and Spark Core
-Understanding and implementing Lakehouse Architecture with Delta Lake
-Creating and managing Databricks notebooks, clusters, and jobs
-Ingesting, transforming, and analyzing data using PySpark and Spark SQL
-Developing Azure Data Factory pipelines for scheduling and monitoring Databricks jobs
-Connecting Power BI to Azure Databricks for visualizing data and creating reports
-Understanding Unity Catalog for managing data governance and security
-Course Focus:
-Azure Databricks: The course focuses on using PySpark and Spark SQL within Azure Databricks, with no coverage of Scala or Java.
-Delta Lake and Lakehouse Architecture: Implementing a modern data architecture for reliable, scalable data lakes.
-Azure Data Factory: Automating and orchestrating workflows for data pipelines.
-Power BI: Connecting to Databricks data for reporting and visualization.
+---
 
+## 🏗️ Architecture Overview
 
+```plaintext
+        ┌───────────────────────────┐
+        │ Formula 1 Raw Data       │
+        │ (CSV, JSON)              │
+        └────────────┬──────────────┘
+                     ▼
+        ┌───────────────────────────┐
+        │ Azure Data Lake Gen2      │
+        │ - Raw Layer               │
+        └────────────┬──────────────┘
+                     ▼
+        ┌───────────────────────────┐
+        │ Azure Databricks          │
+        │ - PySpark ETL             │
+        │ - Delta Lake              │
+        └────────────┬──────────────┘
+                     ▼
+        ┌───────────────────────────┐
+        │ Azure Data Factory        │
+        │ - Pipeline Orchestration  │
+        └────────────┬──────────────┘
+                     ▼
+        ┌───────────────────────────┐
+        │ Power BI                  │
+        │ - Reporting Layer         │
+        └───────────────────────────┘
+🏁 Real-World Use Case: Formula 1 Racing Data
+This project uses F1 telemetry and race data (drivers, constructors, circuits, lap times, results, pit stops, and status history) to simulate:
 
+Incremental vs Full Loads
 
+Schema evolution in Delta
 
+Aggregation of race metrics
+
+Dashboarding key performance indicators (KPI) for races and drivers
+
+🔍 Key Skills & Concepts Covered
+✅ Azure Databricks
+Create and configure clusters & notebooks.
+
+Manage Databricks jobs and job dependencies.
+
+Access Azure Data Lake via mounting with Azure Key Vault.
+
+Query data using Spark SQL and PySpark APIs.
+
+✅ Spark Core / PySpark
+Use DataFrame APIs for filtering, joining, aggregating, and transforming data.
+
+Handle partitioning, window functions, and complex transformations.
+
+Implement incremental loads using event timestamps and file metadata.
+
+✅ Delta Lake
+Merge, update, delete data with ACID guarantees.
+
+Convert Parquet datasets into Delta format.
+
+Implement Time Travel, Schema Evolution, and History Tracking.
+
+✅ Azure Data Factory
+Create pipelines to trigger and monitor Databricks notebooks.
+
+Implement retry logic, failure handling, and conditional execution.
+
+Parameterize notebooks for different stages (raw → silver → gold layers).
+
+✅ Power BI
+Directly connect Power BI to Databricks using SQL endpoints.
+
+Build dashboards showcasing driver rankings, average lap times, and race performance metrics.
+
+Perform DAX calculations and dataset modeling.
+
+✅ Unity Catalog (Data Governance)
+Set up metastore and catalogs for structured governance.
+
+Implement fine-grained access control and auditing.
+
+Capture data lineage for compliance and data discovery.
+
+📁 f1-databricks-pipeline/
+├── data/
+│   ├── raw/                 # Raw F1 data files (CSV, JSON)
+│   ├── silver/              # Cleaned & transformed data
+│   └── gold/                # Final analytical layer
+├── notebooks/
+│   ├── ingestion/           # Raw data ingestion notebooks
+│   ├── transformation/      # Data cleaning, joins, enrichments
+│   ├── delta/               # Delta Lake operations (merge, time travel)
+├── adf-pipelines/
+│   └── json/                # ADF pipeline templates and configs
+├── powerbi/
+│   └── dashboards/          # PBIX files and dashboard screenshots
+└── README.md
