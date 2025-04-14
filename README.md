@@ -131,3 +131,15 @@ Capture data lineage for compliance and data discovery.
 ├── powerbi/
 │   └── dashboards/          # PBIX files and dashboard screenshots
 └── README.md
+
+This project demonstrates:
+
+✅ Real-world, production-ready data pipelines.
+
+✅ Mastery of Spark Core, Delta Lake, and PySpark.
+
+✅ Orchestration via Azure Data Factory.
+
+✅ Governance with Unity Catalog.
+
+✅ BI storytelling with Power BI dashboards.
